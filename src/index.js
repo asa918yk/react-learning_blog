@@ -6,6 +6,7 @@ import BlogDetail from './BlogDetail';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BlogProvider } from './BlogContext';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -16,7 +17,9 @@ const router = createBrowserRouter(
 );
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router} />
+  <BlogProvider>
+    <RouterProvider router={router} />
+  </BlogProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
