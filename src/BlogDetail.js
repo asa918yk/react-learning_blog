@@ -5,7 +5,7 @@ import { BlogContext } from "./BlogContext";
 export default function BlogDetail() {
     const {articles, setArticles} = useContext(BlogContext);
     const {id} = useParams();
-    const article = articles[id - 1];
+    const article = articles.find(item => item.id === Number(id));
     return (
         <div>
             <h1>{article.title}</h1>
